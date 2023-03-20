@@ -1,5 +1,8 @@
 Details of list
+<ul>
 <% @list.items.each do |item| %>
-<%= item.name %>
+<li> <%= item.name %> </li>
+<li> <%= link_to "delete", item_path(item), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%> </li>
 <% end %>
+</ul>
 <%= link_to "add items", new_list_item_path(@list) %>

@@ -1,9 +1,5 @@
 class ItemsController < ApplicationController
 
-  def show
-    @item = Item.find(parms[:id])
-  end
-
   def new
     @list = List.find(params[:list_id])
     @item = Item.new
@@ -13,8 +9,18 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     @list = List.find(params[:list_id])
     @item.list = @list
-    @item.save
-    redirect_to list_path(@list)
+    if @item.save
+      redirect_to list_path(@list)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @item = Item.find(params[:id])
+    @list = @item.list
+    @item.destroy
+    redirect_to list_path(@list), status: :see_other
   end
 
   private
