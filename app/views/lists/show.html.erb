@@ -1,0 +1,5 @@
+Details of list
+<% @list.items.each do |item| %>
+<%= item.name %>
+<% end %>
+<%= link_to "add items", new_list_item_path(@list) %>
