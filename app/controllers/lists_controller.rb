@@ -2,6 +2,7 @@ class ListsController < ApplicationController
 
   def index
     @lists = List.all
+    @user_list = List.find_by(user_id: current_user.id)
   end
 
   def show
