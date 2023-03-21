@@ -9,4 +9,5 @@ Rails.application.routes.draw do
     resources :items, only:[:new, :create]
   end
   resources :items, only:[:edit, :update, :destroy]
+  resources :chatrooms, only: :show
 end
