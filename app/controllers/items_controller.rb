@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
     @list = List.find(params[:list_id])
     @item.list = @list
     if @item.save
-      redirect_to list_path(@list)
+      redirect_to lists_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -20,7 +20,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @list = @item.list
     @item.destroy
-    redirect_to list_path(@list), status: :see_other
+    redirect_to lists_path, status: :see_other
   end
 
   private
