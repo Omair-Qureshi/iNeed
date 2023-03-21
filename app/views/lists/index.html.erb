@@ -1,4 +1,7 @@
 "See all List"
+<ul>
 <% @lists.each do |list| %>
- list of <%= list.user.first_name %>
+<li>list_of
+<%= link_to list.user.first_name, list_path(list) %> </li>
 <% end %>
+</ul>
