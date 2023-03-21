@@ -3,12 +3,24 @@
     <h2>Your list</h2>
     <ul>
       <% @user_list.items.each do |item| %>
-      <li><%= item.name %>: <%= item.description %></li>
-      <% end %>
-      </ul>
-    <p><%= link_to "Add items to your own list", new_list_item_path(@user_list) %></p>
+        <li><%= item.name %>: <%= item.description %>
 
+        <%= link_to item_path(item), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+      <i class="fa-solid fa-trash"></i>
+
+        <% end %>
+        </li>
+      <% end %>
+    </ul>
+
+    <h3>Add item to your own list</h3>
+    <%= simple_form_for [@user_list, @item] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.button :submit %>
+    <% end %>
   </div>
+
   <div class="friends-lists">
     <h2>Your friend's lists</h2>
     <ul>
