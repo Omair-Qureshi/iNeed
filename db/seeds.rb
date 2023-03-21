@@ -13,10 +13,10 @@ User.create(email: "alex@gmail.com", password: "123456", first_name: "Alex", las
 
 List.destroy_all
 List.create(user: User.first, status: "pending")
-# List.create(user_id: 2, status: "pending")
-# List.create(user_id: 3, status: "pending")
+List.create(user_id: 2, status: "pending")
+List.create(user_id: 3, status: "pending")
 
 Item.destroy_all
 Item.create(name: "Pasta", status: "pending", description: "Wholemeal Pasta", quantity: "1 packet", list: List.first)
-# Item.create(name: "Toothpaste", status: "pending", description: "Colgate", quantity: "1 packet", list_id: 2)
-# Item.create(name: "Apples", status: "pending", description: "Red apples", quantity: "1 packet", list_id: 3)
+Item.create(name: "Toothpaste", status: "pending", description: "Colgate", quantity: "1 packet", list_id: 2)
+Item.create(name: "Apples", status: "pending", description: "Red apples", quantity: "1 packet", list_id: 3)

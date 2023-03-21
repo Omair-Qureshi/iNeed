@@ -1,8 +1,17 @@
 Details of list
+<%= @list.user.first_name %>
 <ul>
 <% @list.items.each do |item| %>
-<li> <%= item.name %> </li>
+<li> <%= item.name %>: <%= item.description %> </li>
 <li> <%= link_to "delete", item_path(item), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%> </li>
 <% end %>
 </ul>
 <%= link_to "add items", new_list_item_path(@list) %>
+<%= link_to "delete", list_path(@list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+<%= link_to "back to lists", lists_path %>
+<%= simple_form_for [@list, @item] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.button :submit %>
+<% end %>
+
