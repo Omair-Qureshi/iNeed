@@ -1,14 +1,19 @@
 <div class="container d-flex justify-content-evenly">
+
   <div class="your-list">
-    <h2>Your list</h2>
+     <h2>Your list</h2>
     <ul>
       <% @user_list.items.each do |item| %>
-        <li><%= item.name %>: <%= item.description %>
-
-        <%= link_to item_path(item), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-      <i class="fa-solid fa-trash"></i>
-
-        <% end %>
+        <li>
+            <%= turbo_frame_tag "item_#{item.id}" do %>
+            <%= item.name %>: <%= item.description %>
+            <%= link_to edit_item_path(item) do%>
+            <i class="fa-solid fa-pen-to-square"></i>
+            <% end %>
+            <% end %>
+          <%= link_to item_path(item), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+            <i class="fa-solid fa-trash"></i>
+          <% end %>
         </li>
       <% end %>
     </ul>
