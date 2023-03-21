@@ -1,9 +1,14 @@
-Details of list
-<%= @list.user.first_name %>
+Details of <%= @list.user.first_name %>'s list
+<div data-controller="items">
 <ul>
-<% @list.items.each do |item| %>
-<li> <%= item.name %>: <%= item.description %> </li>
-<li> <%= link_to "Mark as OK", item_path(item), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%> </li>
-<% end %>
+  <% @list.items.each do |item| %>
+    <li>
+      <%= item.name %>: <%= item.description %>
+      <%= link_to "Mark as OK", item_path(item), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+        <input type="checkbox" class="form-check-input item-select-check" id="item_<%= item.id %>" data-items-target="box">
+        <label class="form-check-label" for="checkboxItem"></label>
+    </li>
+  <% end %>
 </ul>
+</div>
 <%= link_to "back to lists", lists_path %>
