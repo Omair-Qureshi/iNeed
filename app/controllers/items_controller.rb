@@ -24,7 +24,7 @@ class ItemsController < ApplicationController
   def update
     @item = Item.find(params[:id])
     @item.update(item_params)
-    redirect_to lists_path
+    redirect_back(fallback_location: list_path(@item.list))
   end
 
   def destroy
@@ -37,6 +37,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :description)
+    params.require(:item).permit(:name, :description, :completed)
   end
 end
