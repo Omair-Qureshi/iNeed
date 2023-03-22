@@ -1,11 +1,17 @@
+<div class="container">
 <h1>Chatrooms</h1>
-<%= current_user %>
+<%= current_user.first_name %>
 <ul>
   <% @chatrooms.each do |chatroom| %>
-  <% chatroom.messages.each do |message| %>
-    <%= message.user.first_name %>
-    <% end %>
-    <li><%= link_to chatroom.name, chatroom_path(chatroom) %></li>
+    <%# <% users_names = chatroom.users.pluck(:first_name).join(", ") %>
+    <% user_names = chatroom.chatroom_users.map { |chat_user| chat_user.user.first_name } %>
+  <% if user_names.include?(current_user.first_name) %>
+      <p><i class="fa-solid fa-comment-sms"></i> <%= link_to user_names.join(", "), chatroom_path(chatroom) %></p>
+  <% end %>
+  <% end %>
+  <li><%= link_to "Create Chatroom", new_chatroom_path(@chatroom) %></li>
+  <% User.all.each do |user| %>
+  <%= link_to user.first_name, chatrooms_path(user_id: user.id), data: {turbo_method: :post} %>
   <% end %>
 </ul>
-<%= link_to "Create Chatroom", new_chatroom_path %>
+</div>
