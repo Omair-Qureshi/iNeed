@@ -13,4 +13,21 @@ class ChatroomsController < ApplicationController
   def new
     @chatroom = Chatroom.new
   end
+
+  def create
+    @chatroom = Chatroom.new
+    ChatroomUser.create(user_id: current_user.id, chatroom: @chatroom)
+    ChatroomUser.create(user_id: params["user_id"], chatroom: @chatroom)
+    if @chatroom.save
+      redirect_to chatroom_path(@chatroom)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  private
+
+  def chatroom_params
+    params.require(:chatroom).permit(:name)
+  end
 end
