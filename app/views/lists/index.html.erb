@@ -1,10 +1,9 @@
-<div class="container d-flex justify-content-evenly">
+<div class="lists-container">
 
   <div class="your-list">
      <h2>Your list</h2>
-    <ul>
       <% @user_list.items.each do |item| %>
-        <li>
+        <div class="list-item">
             <%= turbo_frame_tag "item_#{item.id}" do %>
             <%= item.name %>: <%= item.description %>
             <%= link_to edit_item_path(item) do%>
@@ -14,16 +13,18 @@
           <%= link_to item_path(item), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
             <i class="fa-solid fa-trash"></i>
           <% end %>
-        </li>
+        </div>
       <% end %>
-    </ul>
-
-    <h3>Add item to your own list</h3>
-    <%= simple_form_for [@user_list, @item] do |f| %>
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.button :submit %>
-    <% end %>
+    <br>
+    <br>
+    <div class="item_form">
+      <h3>Add shopping items</h3>
+      <%= simple_form_for [@user_list, @item] do |f| %>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.button :submit, class: "form_btn"%>
+      <% end %>
+    </div>
   </div>
 
   <div class="friends-lists">

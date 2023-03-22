@@ -1,0 +1,70 @@
+.your-list {
+  margin: 60px;
+  width:40%;
+  border: 2px rgb(242, 235, 235) solid;
+  background-color: white;
+  padding: 30px;
+  font-family: Papyrus, Fantasy;
+  background-color: #EDE9D5;
+}
+
+
+.form_btn {
+  color:white;
+  background-color: #EA803A;
+}
+
+.list-item {
+  text-align: right;
+}
+.list-item i {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.friends-lists {
+  margin: 60px;
+  width:40%;
+  border: 2px rgb(242, 235, 235) solid;
+  background-color: white;
+  padding: 30px;
+  font-family: Papyrus, Fantasy;
+  background-color: #EDE9D5;
+}
+
+.lists-container {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.your-list, .friends-lists {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+/* styles for screens wider than 768px */
+@media screen and (min-width: 768px) {
+  .lists-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .your-list, .friends-lists {
+    width: 40%;
+  }
+}
+
+.item_form {
+  margin: 60px;
+  width:70%;
+  border: 2px rgb(216, 210, 210) solid;
+  background-color: white;
+  padding: 20px;
+  font-family: Papyrus, Fantasy;
+  background-color: #EDE9D5;
+}
+
+.form_btn:hover {
+  background-color: rgb(49, 119, 132);
+}
