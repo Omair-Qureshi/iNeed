@@ -11,6 +11,7 @@
 .form_btn {
   color:white;
   background-color: #EA803A;
+  border-radius: 5px;
 }
 
 .list-item {
@@ -39,6 +40,7 @@
 .your-list, .friends-lists {
   width: 100%;
   margin-bottom: 1rem;
+  box-shadow: 10px 3px 10px 3px #4e4040;
 }
 
 /* styles for screens wider than 768px */
@@ -62,8 +64,10 @@
   padding: 20px;
   font-family: Papyrus, Fantasy;
   background-color: #EDE9D5;
+  box-shadow: 10px 3px 10px 3px #4e4040;
 }
 
 .form_btn:hover {
   background-color: rgb(49, 119, 132);
 }
+
