@@ -3,9 +3,25 @@ body {
   background-color: #92a8d1;
 }
 
+.card {
+  background: white;
+  padding: 50px;
+  border: 20px solid lightgrey;
+}
+
+.container {
+  width: 500px;
+  border-radius: 4px;
+  margin: auto;
+}
+
+.h1 {
+  text-align: center;
+}
+
 .btn-flat {
   color: white;
-  padding: 8px 24px;
+  padding: 8px 10px;
   border-radius: 4px;
   background: #514467;
   transition: background 0.3s ease;
@@ -22,7 +38,8 @@ body {
   align-items: center;
   justify-content: space-between;
   height: 100px;
-  padding: 0px 50px;
+  width: 1550px;
+  padding: 50px 50px;
   color: rgba(0,0,0,0.3);
   position: absolute;
   bottom: 0;
@@ -33,7 +50,7 @@ body {
   align-items: center;
 }
 .footer-links a {
-  color: black;
+  color: purple;
   opacity: 0.15;
   text-decoration: none;
   font-size: 24px;
