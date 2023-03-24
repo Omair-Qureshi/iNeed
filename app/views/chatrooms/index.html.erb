@@ -1,26 +1,28 @@
-<div class="container">
-<h1>Your Chatrooms</h1>
-
-<p>Existing Chatrooms</p>
-
-
-<ul>
-  <%  @personal_chats = [current_user.first_name]%>
-  <% @chatrooms.each do |chatroom| %>
-    <%# <% users_names = chatroom.users.pluck(:first_name).join(", ") %>
-    <% user_names = chatroom.chatroom_users.map { |chat_user| chat_user.user.first_name } %>
-  <% if user_names.include?(current_user.first_name) %>
-  <% user_names.delete(current_user.first_name) %>
-  <% @personal_chats.concat(user_names) %>
-      <p><i class="fa-solid fa-comment-sms"></i> <%= link_to user_names.join(", "), chatroom_path(chatroom) %></p>
-  <% end %>
-  <% end %>
-  </ul>
-  <p><%= link_to "Create a new Chat", new_chatroom_path(@chatroom) %></p>
-  <% User.all.each do |user| %>
-    <% if @personal_chats.exclude? user.first_name  %>
-      <%= link_to user.first_name, chatrooms_path(user_id: user.id), data: {turbo_method: :post} %>
+<div class="container-chat">
+  <div class="chatroom-container">
+    <div class="C"><h1>Your Chatrooms</h1></div>
+    <div class="Existing_chatrooms">
+      <p>Existing Chatrooms</p>
+      <ul>
+        <%  @personal_chats = [current_user.first_name]%>
+        <% @chatrooms.each do |chatroom| %>
+          <%# <% users_names = chatroom.users.pluck(:first_name).join(", ") %>
+          <% user_names = chatroom.chatroom_users.map { |chat_user| chat_user.user.first_name } %>
+        <% if user_names.include?(current_user.first_name) %>
+        <% user_names.delete(current_user.first_name) %>
+        <% @personal_chats.concat(user_names) %>
+            <p><i class="fa-solid fa-comment-sms sms-icon"></i> <%= link_to user_names.join(", "), chatroom_path(chatroom) %></p>
+        <% end %>
+        <% end %>
+        </ul>
+    </div>
+    <div class="New_chat">
+      <%# <p><%= link_to "Create a new Chat", new_chatroom_path(@chatroom) %></p>
+      <p> Start new Chat </p>
+      <% User.all.each do |user| %>
+        <% if @personal_chats.exclude? user.first_name  %>
+          <p><i class="fa-solid fa-comment-sms"></i> <%= link_to user.first_name, chatrooms_path(user_id: user.id), data: {turbo_method: :post} %></p>
+        <% end %>
     <% end %>
-  <% end %>
-
+  </div>
 </div>
