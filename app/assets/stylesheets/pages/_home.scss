@@ -1,6 +1,6 @@
 // Specific CSS for your home-pag
 body {
-  background-color: #92a8d1;
+  background-color:#92a8d1;
 }
 
 .card {
@@ -10,13 +10,15 @@ body {
 }
 
 .container {
-  width: 500px;
+  width: 300px;
   border-radius: 4px;
-  margin: auto;
+  margin: 70px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
 .h1 {
   text-align: center;
+  text-shadow: 5px 5px 8px rgba(0,0,0,0.2);
 }
 
 .btn-flat {

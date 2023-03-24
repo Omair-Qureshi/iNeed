@@ -1,14 +1,30 @@
-<center>
-<p>Welcome to the Community Grocery Service! </p>
-  <h1><strong> What do you need?<strong></h1>
+<% if user_signed_in? %>
+  <center>
+    <p><strong>Hello! <%= current_user.first_name %></p>
+      <h1><strong> What do you need?<strong></h1>
 
-<div class="container">
-  <div class="card">
-  <h1><strong>iNeed</h1>
-   <%= link_to "Go to lists", lists_path, class: "btn btn-flat" %>
+    <div class="container">
+      <div class="card">
+        <h1><strong>iNeed</h1>
+       <%= link_to "Go to lists", lists_path, class: "btn btn-flat" %>
+      </div>
+    </div>
   </center>
-  </div>
-</div>
+
+  <% else %>
+<center>
+    <p><strong>Welcome to the Community Grocery Service.</p>
+    <p><strong>Are you missing a item and you don't have the time do errands ?<p>
+    <p><strong>Join the Community! Ask your friend or neighbor if they can get it for you.
+
+  <div class="container">
+      <div class="card">
+        <h1><strong>iNeed</h1>
+          <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-flat" %>
+      </div>
+    </div>
+  </center>
+<% end %>
 
 <div class="footer">
   <div class="footer-links">
