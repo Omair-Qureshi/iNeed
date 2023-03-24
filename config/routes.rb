@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :lists, only:[:index, :show, :new, :create, :edit, :update, :destroy] do
     resources :items, only:[:new, :create]
+    resources :shared_lists,  only: [:create, :index, :new]
   end
   resources :items, only:[:edit, :update, :destroy]
   resources :chatrooms, only:[:show, :index, :new, :create] do

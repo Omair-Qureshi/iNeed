@@ -1,0 +1,18 @@
+<div class="shared-list">
+  <h2>Your list is visible to:</h2>
+  <ul>
+    <% @list.users.each do |user| %>
+    <li><%= user.first_name %></li>
+    <% end %>
+  </ul>
+  <p> Share your list with another user: </p>
+
+ <%= simple_form_for [@list,@shared_list] do |f| %>
+    <%= f.input :user, label: "Email", hint: "Enter the email of the user you want to share your list with" %>
+    <%= f.submit 'Share List', class: "form_btn" %>
+  <% end %>
+  <br>
+   <br>
+  <%= link_to "Back to lists", lists_path %>
+
+</div>
