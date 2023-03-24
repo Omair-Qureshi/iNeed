@@ -25,13 +25,14 @@
       <%= f.button :submit, class: "form_btn"%>
       <% end %>
     </div>
+    <%= link_to "Who can see your list ?", list_shared_lists_path(@user_list) %>
   </div>
 
   <div class="friends-lists">
     <h2>Your friend's lists</h2>
     <ul>
       <% @lists.each do |list| %>
-        <% if list.user.id != current_user.id %>
+        <% if (list.user.id != current_user.id) && (list.users.include? current_user) %>
           <li> <%= link_to list.user.first_name, list_path(list) %>'s List</li>
         <% end %>
       <% end %>
