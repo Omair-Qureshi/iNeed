@@ -19,3 +19,6 @@ Details of <%= @list.user.first_name %>'s list
 
 <%= link_to "back to lists", lists_path %>
 </div>
+<%= link_to chatrooms_path, class: "navlink" do %>
+      <div class="scroll-icon"><i class="fa-solid fa-envelope"></i> Chat</div>
+<% end %>

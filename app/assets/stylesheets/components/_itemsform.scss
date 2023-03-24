@@ -68,6 +68,22 @@
 }
 
 .form_btn:hover {
-  background-color: rgb(49, 119, 132);
+  background-color: #98DFD6;
+  box-shadow: 10px 3px 10px 3px #4e4040;
 }
 
+.scroll-icon {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  font-size: 12px;
+  padding: 10px;
+  color: white;
+  background-color: #4C4B16;
+  border-radius: 20%;
+  box-shadow: 5px 3px 5px 3px #aba6a6;
+}
+
+// .scroll-icon.scrolled {
+//   // transform: translateX(-100px);
+// }
