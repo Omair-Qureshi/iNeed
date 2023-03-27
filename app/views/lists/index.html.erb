@@ -1,0 +1,44 @@
+<div class="lists-container">
+
+  <div class="your-list">
+     <h2>Your list</h2>
+      <% @user_list.items.each do |item| %>
+        <div class="list-item">
+            <%= turbo_frame_tag "item_#{item.id}" do %>
+            <%= item.name %>: <%= item.description %>
+            <%= link_to edit_item_path(item) do%>
+            <i class="fa-solid fa-pen-to-square"></i>
+            <% end %>
+            <% end %>
+          <%= link_to item_path(item), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+            <i class="fa-solid fa-trash"></i>
+          <% end %>
+        </div>
+      <% end %>
+    <br>
+    <br>
+    <div class="item_form">
+      <h3>Add shopping items</h3>
+      <%= simple_form_for [@user_list, @item] do |f| %>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.button :submit, class: "form_btn"%>
+      <% end %>
+    </div>
+    <%= link_to "Who can see your list ?", list_shared_lists_path(@user_list) %>
+  </div>
+
+  <div class="friends-lists">
+    <h2>Your friend's lists</h2>
+    <ul>
+      <% @lists.each do |list| %>
+        <% if (list.user.id != current_user.id) && (list.users.include? current_user) %>
+          <li> <%= link_to list.user.first_name, list_path(list) %>'s List</li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+    <%= link_to chatrooms_path, class: "navlink" do %>
+      <div class="scroll-icon"><i class="fa-solid fa-envelope"></i> Chat</div>
+    <% end %>
+</div>

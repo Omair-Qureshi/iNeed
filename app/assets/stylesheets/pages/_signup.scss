@@ -1,0 +1,25 @@
+.container-signup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.signup {
+  margin: 30px;
+  width:70%;
+  border: 2px rgb(206, 192, 192) solid;
+  background-color: white;
+  padding: 30px;
+  background-color: #EDE9D5;
+  box-shadow: 10px 3px 10px 3px #4e4040;
+}
+
+.login-render {
+  text-align: center;
+  width: 100%;
+  padding: 7px;
+  background-color: #99cdeb;
+  border-radius: 6px;
+}
