@@ -19,4 +19,12 @@ class SharedListsController < ApplicationController
       # render :new, status: :unprocessable_entity
     end
   end
+
+  def destroy
+    @shared_list = SharedList.find(params[:shared_list_id])
+    @list = @shared_list.list
+    @shared_list.destroy
+    redirect_to list_shared_lists_path(@list), status: :see_other
+  end
+
 end

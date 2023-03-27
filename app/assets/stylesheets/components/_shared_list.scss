@@ -4,7 +4,36 @@
   padding: 10px;
   font-family: Papyrus, Fantasy;
   background-color: #EDE9D5;
+  width: 80%;
   margin-top:50px;
-  margin-left: 30%;
-  margin-right: 30%;
+  margin-left: auto;
+  margin-right: auto;
+
+  ul {
+    list-style-type: none;
+  }
+}
+
+.btn-visiblity {
+    color: gray;
+    margin-left: 15px;
+    text-decoration: none;
+    text-align: right;
+    display: block;
+    font-size: 18px;
+}
+
+.share-list-btn {
+  color: white;
+  background-color: #EA803A;
+  border-radius: 5px;
+  width: 110px;
+  height: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .shared-list {
+    width: 40%;
+    margin: 60px;
+  }
 }
