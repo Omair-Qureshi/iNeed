@@ -25,7 +25,9 @@
       <%= f.button :submit, class: "form_btn"%>
       <% end %>
     </div>
-    <%= link_to "Who can see your list ?", list_shared_lists_path(@user_list) %>
+    <%= link_to list_shared_lists_path(@user_list), class: "btn-visiblity" do %>
+    <i class="fa-solid fa-gear"></i> Manage list visiblity
+    <% end %>
   </div>
 
   <div class="friends-lists">
