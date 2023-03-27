@@ -2,17 +2,23 @@
   <h2>Your list is visible to:</h2>
   <ul>
     <% @list.users.each do |user| %>
-    <li><%= user.first_name %></li>
+      <li>
+        <%= user.first_name %>
+        <% @shared_list_user = SharedList.where(user: user, list: @list).first %>
+        <%= link_to shared_list_path(@shared_list_user, shared_list_id: @shared_list_user.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+         <i class="fa-solid fa-trash"></i>
+        <% end %>
+      </li>
     <% end %>
   </ul>
   <p> Share your list with another user: </p>
 
  <%= simple_form_for [@list,@shared_list] do |f| %>
-    <%= f.input :user, label: "Email", hint: "Enter the email of the user you want to share your list with" %>
-    <%= f.submit 'Share List', class: "form_btn" %>
+    <%= f.input :user, label: "Email" %>
+    <%= f.submit 'Share List', class: "share-list-btn" %>
   <% end %>
   <br>
    <br>
-  <%= link_to "Back to lists", lists_path %>
+  <%= link_to "Back to lists", lists_path, class: "btn btn-flat" %>
 
 </div>
