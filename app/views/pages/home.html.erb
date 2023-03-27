@@ -1,3 +1,4 @@
+
 <% if user_signed_in? %>
   <center>
     <p><strong>Hello! <%= current_user.first_name %></p>
@@ -7,6 +8,7 @@
       <div class="card">
         <h1><strong>iNeed</h1>
        <%= link_to "Go to lists", lists_path, class: "btn btn-flat" %>
+        </div>
       </div>
     </div>
   </center>
@@ -27,12 +29,7 @@
 <% end %>
 
 <div class="footer">
-  <div class="footer-links">
-     <a href="#"><i class="fab fa-facebook"></i></a>
-     <a href="#"><i class="fab fa-instagram"></i></a>
-  </div>
-
 <div class="footer-copyright">
-    This footer is made with <i class="fas fa-heart"></i> at Le Wagon
+    © 2023 TAQ, Inc. All rights reserved.<i class="fas fa-heart"></i>
   </div>
 </div>
