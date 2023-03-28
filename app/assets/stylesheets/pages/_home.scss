@@ -7,13 +7,17 @@ body {
   background: white;
   padding: 50px;
   border: 20px solid lightgrey;
+  border-radius: 20%;
 }
 
-.container {
-  width: 350px;
-  border-radius: 4px;
-  margin: 70px;
+.container-h {
+  width: 290px;
+  container-h
+  border-radius: 20%;
+  margin: 20px
+  border-radius: 4px
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  margin-top: 70px;
 }
 
 .h1 {
@@ -41,10 +45,10 @@ body {
   //justify-content: space-between;
   height:45px;
   width: 100%;
-  //padding: 20px;
+  padding: 10px;
   color: rgba(0,0,0,0.3);
   position: absolute;
-  bottom: 0;
+  bottom: 0px;
   margin: 0px;
 }
 
