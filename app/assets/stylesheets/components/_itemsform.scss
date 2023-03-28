@@ -1,7 +1,5 @@
 .your-list {
-  width:40%;
   border: 2px rgb(242, 235, 235) solid;
-  background-color: white;
   padding: 10px;
   // font-family: Papyrus, Fantasy;
   background-color: #EDE9D5;
@@ -25,10 +23,19 @@
 .friends-lists {
   width:40%;
   border: 2px rgb(242, 235, 235) solid;
-  background-color: white;
   padding: 30px;
   // font-family: Papyrus, Fantasy;
   background-color: #EDE9D5;
+  li{
+  list-style: none;
+  font-size: 18px;
+  line-height: 30px;
+
+  a{
+    text-decoration: none;
+    color:rgba(0, 0, 0, 0.9);
+  }
+  }
 }
 
 .lists-container {
