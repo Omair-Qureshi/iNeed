@@ -15,7 +15,7 @@ class ChatroomsController < ApplicationController
   end
 
   def create
-    @chatroom = Chatroom.new
+    @chatroom = Chatroom.new(name: "iNeed Chat")
     ChatroomUser.create(user_id: current_user.id, chatroom: @chatroom)
     ChatroomUser.create(user_id: params["user_id"], chatroom: @chatroom)
     if @chatroom.save
