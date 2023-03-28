@@ -9,10 +9,9 @@ body {
   border: 20px solid lightgrey;
 }
 
-.container {
-  width: 300px;
+.container-h {
+  width: 290px;
   border-radius: 4px;
-  margin: 70px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
@@ -36,14 +35,15 @@ body {
 
 .footer {
   text-align: center;
+  background-color: rgb(192, 185, 185);
   //align-items: center;
   //justify-content: space-between;
   height:45px;
   width: 100%;
-  //padding: 20px;
+  padding: 10px;
   color: rgba(0,0,0,0.3);
   position: absolute;
-  bottom: 0;
+  bottom: 0px;
   margin: 0px;
 }
 

@@ -11,6 +11,7 @@ class MessagesController < ApplicationController
       )
       head :ok
       # redirect_to chatroom_path(@chatroom)
+      # redirect_to :back
     else
       render "chatrooms/show", status: :unprocessable_entity
     end
