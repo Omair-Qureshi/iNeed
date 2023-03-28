@@ -7,7 +7,7 @@
         <%  @personal_chats = [current_user.first_name]%>
         <% @chatrooms.each do |chatroom| %>
           <%# <% users_names = chatroom.users.pluck(:first_name).join(", ") %>
-          <% user_names = chatroom.chatroom_users.map { |chat_user| chat_user.user.first_name } %>
+        <% user_names = chatroom.chatroom_users.map { |chat_user| chat_user.user.first_name } %>
         <% if user_names.include?(current_user.first_name) %>
         <% user_names.delete(current_user.first_name) %>
         <% @personal_chats.concat(user_names) %>
