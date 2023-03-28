@@ -1,62 +1,72 @@
 
-.container.chatroom {
-  max-width: 700px;
+.container {
+  width: 100%;
+  max-width: 500px;
   margin: 0 auto;
   background-color: #ECE5DD;
   padding: 20px;
+  margin-top: 10px;
 }
 
 .chatroom-header h1 {
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 20px;
+  display: flex;
+  margin: 0;
+  font-weight: 30px;
+  font-size: 14px;
   background-color: #128C7E;
   color: #FFFFFF;
-  padding: 10px;
-}
-
-.messages {
-  max-height: 550px;
-  overflow-y: scroll;
-  margin-bottom: 20px;
-}
-
-.message {
-  padding: 10px;
-  background-color: #DFFFD8;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  margin-bottom: 10px;
+  padding: 20px;
 }
 
 .chatroom-form {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: space-between;
+  margin-top: 10px;
 }
+
+.messages {
+  max-height: 400px;
+  overflow-y: scroll;
+  padding: 10px;
+}
+
+.message-row {
+  margin-bottom: 10px;
+}
+
+.sender-style {
+  background-color: #DFFFD8;
+  color: #0e0d0d;
+  border-radius: 10px;
+  padding: 5px 10px;
+  max-width: 70%;
+}
+
+.receiver-style {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 5px 10px;
+  max-width: 70%;
+}
+
 
 .chatroom-form input[type="text"] {
-  padding: 10px;
+  border-radius: 50px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  border-radius: 20px;
-  margin-left: 2rem;
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
 }
 
-.chatroom-form input[type="submit"] {
-  padding: 5px 5px;
-  background-color: #333;
-  color: #fff;
-  border: none;
-  border-radius: 20px;
+.chatroom-form .btn-primary {
+  border-radius: 50px;
+  padding: 10px;
+  font-size: 16px;
+  margin-left: 10px;
   background-color: #128C7E;
 }
 
-.chatroom-form input[type="submit"]:hover {
+.chatroom-form .btn-primary:hover {
   background-color: #555;
 }
-
 
 @media only screen and (max-width: 600px) {
   .container.chatroom {
@@ -68,11 +78,12 @@
   }
   .chatroom-form {
     flex-wrap: wrap;
+    margin-top: 200px;
   }
   .chatroom-form input[type="text"] {
     width: 100%;
   }
   .chatroom-form input[type="submit"] {
-    margin-left: 2rem;
+    margin-left: 0.5rem;
   }
 }
