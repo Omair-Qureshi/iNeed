@@ -61,6 +61,8 @@ Item.create(name: "Fish", description: "Salmon", list_id: 6)
 Item.create(name: "Ice cream", description: "Any flavour", list_id: 5)
 Item.create(name: "Shampoo", description: "Loreal", list_id: 3)
 
+Chatroom.destroy_all
+
 Chatroom.create(name: "iNeed Chat")
 Chatroom.create(name: "iNeed Chat")
 Chatroom.create(name: "iNeed Chat")
@@ -68,6 +70,8 @@ Chatroom.create(name: "iNeed Chat")
 Chatroom.create(name: "iNeed Chat")
 Chatroom.create(name: "iNeed Chat")
 Chatroom.create(name: "iNeed Chat")
+
+ChatroomUser.destroy_all
 
 ChatroomUser.create(chatroom_id: 1, user_id: 1)
 ChatroomUser.create(chatroom_id: 1, user_id: 2)
@@ -80,6 +84,8 @@ ChatroomUser.create(chatroom_id: 4, user_id: 8)
 ChatroomUser.create(chatroom_id: 5, user_id: 9)
 ChatroomUser.create(chatroom_id: 5, user_id: 1)
 
+Message.destroy_all
+
 Message.create(content: "Hello", chatroom_id: 1, user_id: 1)
 Message.create(content: "How are you", chatroom_id: 1, user_id: 1)
 Message.create(content: "Are you fine?", chatroom_id: 2, user_id: 3)
@@ -88,6 +94,8 @@ Message.create(content: "Hello", chatroom_id: 3, user_id: 5)
 Message.create(content: "How are you", chatroom_id: 3, user_id: 6)
 Message.create(content: "Are you fine?", chatroom_id: 4, user_id: 7)
 Message.create(content: "How's everything going?", chatroom_id: 4, user_id: 8)
+
+SharedList.destroy_all
 
 SharedList.create(list_id:1, user_id:2)
 SharedList.create(list_id:1, user_id:3)
