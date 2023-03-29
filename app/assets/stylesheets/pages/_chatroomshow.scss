@@ -2,10 +2,9 @@
 .container {
   width: 100%;
   max-width: 500px;
-  margin: 0 auto;
-  background-color: #ECE5DD;
+  background-color: #E5E5CB;
   padding: 20px;
-  margin-top: 10px;
+  border-radius: 20px;
 }
 
 .chatroom-header h1 {
@@ -13,7 +12,7 @@
   margin: 0;
   font-weight: 30px;
   font-size: 14px;
-  background-color: #128C7E;
+  background-color: #113937;
   color: #FFFFFF;
   padding: 20px;
 }
@@ -33,7 +32,7 @@
 }
 
 .sender-style {
-  background-color: #DFFFD8;
+  background-color: #C0DEFF;
   color: #0e0d0d;
   border-radius: 10px;
   padding: 5px 10px;
@@ -41,7 +40,7 @@
 }
 
 .receiver-style {
-  background-color: #f5f5f5;
+  background-color: #E5FBB8;
   border-radius: 10px;
   padding: 5px 10px;
   max-width: 70%;
@@ -61,7 +60,7 @@
   padding: 10px;
   font-size: 16px;
   margin-left: 10px;
-  background-color: #128C7E;
+  background-color: #113937;
 }
 
 .chatroom-form .btn-primary:hover {
@@ -78,7 +77,11 @@
   }
   .chatroom-form {
     flex-wrap: wrap;
-    margin-top: 200px;
+    // margin-top: 200px;
+  }
+
+  .messages {
+    max-height: 80%;
   }
   .chatroom-form input[type="text"] {
     width: 100%;
