@@ -6,4 +6,6 @@ class User < ApplicationRecord
   has_many :messages, dependent: :destroy
   has_many :chatroom_users, dependent: :destroy
   has_many :chatrooms, through: :chatroom_users, dependent: :destroy
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end
