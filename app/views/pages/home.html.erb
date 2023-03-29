@@ -2,18 +2,34 @@
 <% if user_signed_in? %>
   <center>
     <p><strong>Hello! <%= current_user.first_name %></p>
-      <h1><strong> What do you need?<strong></h1>
 
-    <div class="container-h">
-      <div class="card">
-        <h1><strong>iNeed</h1>
-       <%= link_to "Go to lists", lists_path, class: "btn btn-flat" %>
-        </div>
+<div class="cute-robot-v1">
+  <div class="circle-bg">
+    <div class="robot-ear left"></div>
+    <div class="robot-head">
+      <div class="robot-face">
+        <div class="eyes left"></div>
+        <div class="eyes right"></div>
+        <div class="mouth"></div>
       </div>
     </div>
-  </center>
+    <div class="robot-ear right"></div>
+    <div class="robot-body"></div>
+  </div>
+</div>
 
-  <% else %>
+<h1><strong> What do you need?<strong></h1>
+
+<div class="container-h">
+  <div class="card">
+    <h1><strong>iNeed</h1>
+      <%= link_to "Go to lists", lists_path, class: "btn btn-flat" %>
+    </div>
+  </div>
+</div>
+  </center>
+ <% else %>
+
 <center>
     <p><strong>Welcome to the Community Grocery Service.</p>
     <p><strong>Are you missing an item and you don't have the time do errands ?<p>
@@ -25,12 +41,11 @@
           <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-flat" %>
           <%= link_to "Login", new_user_session_path, class: "btn btn-flat" %>
       </div>
-    </div>
-  </center>
+  </div>
+</center>
 <% end %>
 
 <div class="footer">
-
 <div class="footer-copyright">
     © 2023 TAQ, Inc. All rights reserved.<i class="fas fa-heart"></i>
   </div>
