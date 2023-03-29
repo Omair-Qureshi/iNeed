@@ -4,6 +4,25 @@ class ListsController < ApplicationController
     @lists = List.all
     @user_list = List.find_by(user_id: current_user.id)
     @item = Item.new
+
+    @users = User.all
+    @markers = @users.geocoded.map do |user|
+      if user == current_user
+        {
+          lat: user.latitude,
+          lng: user.longitude,
+          info_window_html: render_to_string(partial: "info_window", locals: {user: user}),
+          marker_html: render_to_string(partial: "marker")
+        }
+      else
+        {
+          lat: user.latitude,
+          lng: user.longitude,
+          info_window_html: render_to_string(partial: "info_window", locals: {user: user}),
+          marker_html: render_to_string(partial: "marker_others")
+        }
+      end
+    end
   end
 
   def show

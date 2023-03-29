@@ -1,0 +1,6 @@
+
+<h2><%= user.first_name %></h2>
+<p><%= user.address %></p>
+<p>Number of items on list: <%= List.where(user_id: user.id).first.items.count %></p>
+
+<%= link_to "Go to list", list_path(List.where(user_id: user.id).first.id) %>
