@@ -45,8 +45,6 @@ body {
   width: 100%;
   padding: 10px;
   color: rgba(0,0,0,0.3);
-  position: absolute;
-  bottom: 0px;
   margin: 0px;
 }
 
@@ -262,4 +260,11 @@ $inner-bg: #cedbdd;
   100% {
     transform: scale(1);
   }
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  min-height: 100vh;
 }
