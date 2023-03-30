@@ -12,15 +12,15 @@ Item.destroy_all
 List.destroy_all
 User.destroy_all
 
-User.create(email: "omair@gmail.com", password: "123456", first_name: "Omair", last_name: "Qu", address: "7 Marylands Rd, London")
-User.create(email: "oznur@gmail.com", password: "123456", first_name: "Oznur", last_name: "Ar", address: "Downfield Cl, London")
+User.create(email: "omair@gmail.com", password: "123456", first_name: "Omair", last_name: "Qu", address: "Amberley Rd 69, London")
+User.create(email: "oznur@gmail.com", password: "123456", first_name: "Oznur", last_name: "Ar", address: "Sutherland Ave 19, London")
 User.create(email: "alex@gmail.com", password: "123456", first_name: "Alex", last_name: "Ab", address: "3 Downfield Cl, London")
 User.create(email: "Bob@gmail.com", password: "123456", first_name: "Bob", last_name: "AR" )
 User.create(email: "John@gmail.com", password: "123456", first_name: "John", last_name: "CW" )
-User.create(email: "Derrik@gmail.com", password: "123456", first_name: "Derrik", last_name: "KL", address: "Sutherland Ave 17, London")
-User.create(email: "Abb@gmail.com", password: "123456", first_name: "Abb", last_name: "MO", address: "Sutherland Ave 19, London")
-User.create(email: "James@gmail.com", password: "123456", first_name: "James", last_name: "Ro", address: "Amberley Rd 69, London")
-User.create(email: "George@gmail.com", password: "123456", first_name: "George", last_name: "Lm", address: "Amberley Rd 69, London")
+User.create(email: "Derrik@gmail.com", password: "123456", first_name: "Derrik", last_name: "KL", address: "Sutherland Ave 23, London")
+User.create(email: "Abb@gmail.com", password: "123456", first_name: "Abb", last_name: "MO")
+User.create(email: "James@gmail.com", password: "123456", first_name: "James", last_name: "Ro")
+User.create(email: "George@gmail.com", password: "123456", first_name: "George", last_name: "Lm", address: "7 Marylands Rd, London")
 
 List.create(user_id: 1, status: "pending")
 List.create(user_id: 2, status: "pending")
