@@ -12,14 +12,14 @@ class ListsController < ApplicationController
           lat: user.latitude,
           lng: user.longitude,
           info_window_html: render_to_string(partial: "info_window", locals: {user: user}),
-          marker_html: render_to_string(partial: "marker")
+          marker_html: render_to_string(partial: "marker", locals: {user: user})
         }
       else
         {
           lat: user.latitude,
           lng: user.longitude,
           info_window_html: render_to_string(partial: "info_window", locals: {user: user}),
-          marker_html: render_to_string(partial: "marker_others")
+          marker_html: render_to_string(partial: "marker_others", locals: {user: user})
         }
       end
     end
