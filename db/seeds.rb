@@ -6,13 +6,32 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 # rails rails db:reset rails db:seed
-#(To reset database and have the id starting from 1)
+# (To reset database and have the id starting from 1)
+puts "cleaning DB..."
 
 Item.destroy_all
+puts "Items deleted"
+
 List.destroy_all
+puts "Lists deleted"
+
 User.destroy_all
+puts "Users deleted"
+
+ChatroomUser.destroy_all
+puts "Chatroom Users deleted"
+
+Chatroom.destroy_all
+puts "Chatrooms deleted"
+
+Message.destroy_all
+puts "Messages deleted"
+
+SharedList.destroy_all
+puts "Shared Lists deleted"
 
 User.create(email: "omair@gmail.com", password: "123456", first_name: "Omair", last_name: "Qu", address: "Amberley Rd 70, London")
+puts "#{User.first.email} is created"
 User.create(email: "oznur@gmail.com", password: "123456", first_name: "Oznur", last_name: "Ar", address: "Amberley Rd 72, London")
 User.create(email: "alex@gmail.com", password: "123456", first_name: "Alex", last_name: "Ab", address: "Amberley Rd 73, London")
 User.create(email: "Bob@gmail.com", password: "123456", first_name: "Bob", last_name: "AR" )
@@ -47,7 +66,6 @@ Item.create(name: "Tomatoes", description: "Plum tomatoes", list_id: 2)
 Item.create(name: "Ginger", description: "Powder", list_id: 3)
 Item.create(name: "Onions", description: "Red onions", list_id: 4)
 Item.create(name: "Meat", description: "Red meat", list_id: 5)
-Item.create(name: "Mix Vegetables", description: "Frozen vegetables", list_id: 3)
 Item.create(name: "Salt", description: "1 packet", list_id: 6)
 Item.create(name: "Butter", description: "Clover", list_id: 7)
 Item.create(name: "Yogurt", description: "Full fat", list_id: 8)
@@ -71,7 +89,6 @@ Chatroom.create(name: "iNeed Chat")
 Chatroom.create(name: "iNeed Chat")
 Chatroom.create(name: "iNeed Chat")
 
-ChatroomUser.destroy_all
 
 ChatroomUser.create(chatroom_id: 1, user_id: 1)
 ChatroomUser.create(chatroom_id: 1, user_id: 2)
@@ -84,7 +101,7 @@ ChatroomUser.create(chatroom_id: 4, user_id: 8)
 ChatroomUser.create(chatroom_id: 5, user_id: 9)
 ChatroomUser.create(chatroom_id: 5, user_id: 1)
 
-Message.destroy_all
+
 
 Message.create(content: "Hello", chatroom_id: 1, user_id: 1)
 Message.create(content: "How are you", chatroom_id: 1, user_id: 1)
@@ -95,7 +112,7 @@ Message.create(content: "How are you", chatroom_id: 3, user_id: 6)
 Message.create(content: "Are you fine?", chatroom_id: 4, user_id: 7)
 Message.create(content: "How's everything going?", chatroom_id: 4, user_id: 8)
 
-SharedList.destroy_all
+
 
 SharedList.create(list_id:1, user_id:2)
 SharedList.create(list_id:1, user_id:3)

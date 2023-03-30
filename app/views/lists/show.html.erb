@@ -7,8 +7,10 @@
           <div class="item-name"><strong><%= item.name %>:</strong> <%= item.description %>
 
             <%= turbo_frame_tag "first_turbo_frame" do %>
-              <%= link_to edit_item_path(item), data: { turbo_frame: "second_frame" }, item: item do %>
-                <i class="fa-regular fa-image"></i>
+              <% if item.photo.attached? %>
+                <%= link_to edit_item_path(item), data: { turbo_frame: "second_frame" }, item: item do %>
+                  <i class="fa-regular fa-image"></i>
+                <% end %>
               <% end %>
             <% end %>
           </div>
