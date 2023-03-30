@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :shared_lists,  only: [:create, :index, :new]
   end
 
-  resources :items, only:[:edit, :update, :destroy]
+  resources :items, only:[:edit, :update, :destroy, :show]
   resources :shared_lists, only: [:destroy]
   resources :chatrooms, only:[:show, :index, :new, :create] do
     resources :messages, only: :create

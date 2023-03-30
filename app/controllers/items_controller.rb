@@ -5,6 +5,11 @@ class ItemsController < ApplicationController
     @item = Item.new
   end
 
+  def show
+    @list = List.find(params[:list_id])
+    @item = Item.find(params[:id])
+  end
+
   def create
     @item = Item.new(item_params)
     @list = List.find(params[:list_id])

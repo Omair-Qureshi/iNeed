@@ -4,7 +4,16 @@
     <% @list.items.each do |item| %>
       <%= turbo_frame_tag dom_id(item) do %>
         <li class="d-flex align-content-center">
-          <div class="item-name"><strong><%= item.name %>:</strong> <%= item.description %> <i class="fa-regular fa-image"></i> </div>
+          <div class="item-name"><strong><%= item.name %>:</strong> <%= item.description %>
+
+            <%= turbo_frame_tag "first_turbo_frame" do %>
+              <%= link_to edit_item_path(item), data: { turbo_frame: "second_frame" }, item: item do %>
+                <i class="fa-regular fa-image"></i>
+              <% end %>
+            <% end %>
+          </div>
+
+
           <%= link_to item_path(item, item: { completed: !item.completed }), data: { turbo_method: :patch }, style: 'display: block; background: white; border: 1px solid black; height: 1.6 rem; width: 1.7rem;' do %>
             <% if item.completed %>
               <i class="fa-solid fa-check fa-xl" style="color: #45c83c;"></i>
@@ -37,5 +46,8 @@
     <% end %>
 
   </div>
-  <%= cl_image_tag("janko-ferlic-doli0TqGBac-unsplash_b8pr9t", width: 300, height: 400, crop: :fill) %>
+  <%= turbo_frame_tag "second_frame" do %>
+
+  <%# <%= cl_image_tag("janko-ferlic-doli0TqGBac-unsplash_b8pr9t", width: 300, height: 400, crop: :fill) %>
+  <% end %>
 </div>
