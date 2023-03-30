@@ -8,7 +8,9 @@
 
             <%= turbo_frame_tag "first_turbo_frame" do %>
               <%= link_to edit_item_path(item), data: { turbo_frame: "second_frame" }, item: item do %>
+                <% if item.photo.attached? %>
                 <i class="fa-regular fa-image"></i>
+                <% end %>
               <% end %>
             <% end %>
           </div>
@@ -24,6 +26,7 @@
       <% end %>
     <% end %>
   </ul>
+
   <div class= "footer-friend-list">
     <%= link_to "Back to lists", lists_path, class: "btn btn-flat", style: 'margin-bottom:20px'%>
     <% @chats = [] %>
@@ -47,7 +50,5 @@
 
   </div>
   <%= turbo_frame_tag "second_frame" do %>
-
-  <%# <%= cl_image_tag("janko-ferlic-doli0TqGBac-unsplash_b8pr9t", width: 300, height: 400, crop: :fill) %>
   <% end %>
 </div>

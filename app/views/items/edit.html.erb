@@ -1,8 +1,5 @@
- <div class="header">
-    <h1>Edit quote</h1>
-  </div>
 
-  <%= turbo_frame_tag "item_#{@item.id}" do %>
+<%= turbo_frame_tag "item_#{@item.id}" do %>
     <%= simple_form_for @item do |f| %>
       <%= f.input :name %>
       <%= f.input :description %>
@@ -10,20 +7,14 @@
     <% end %>
   <% end %>
 
-<%= turbo_frame_tag "first_turbo_frame" do %>
+<%= turbo_frame_tag "aaa" do %>
 aaa
-
 <% end %>
 
 
 
 <%= turbo_frame_tag "second_frame" do %>
-
-<p><%= @item.name %></p>
-<p><%= @item.description %></p>
-<p><%= @item.photo.attached? %></p>
-
-<%# <%= cl_image_tag(item.photo.key, width: 300, height: 400, crop: :fill) %>
-<%# end %>
-
+  <% if @item.photo.attached?%>
+    <%= cl_image_tag(@item.photo.key, width: 200, height: 200) %>
+  <% end %>
 <% end %>
