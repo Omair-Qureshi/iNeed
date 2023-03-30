@@ -12,9 +12,9 @@ Item.destroy_all
 List.destroy_all
 User.destroy_all
 
-User.create(email: "omair@gmail.com", password: "123456", first_name: "Omair", last_name: "Qu", address: "Amberley Rd 70, London")
-User.create(email: "oznur@gmail.com", password: "123456", first_name: "Oznur", last_name: "Ar", address: "Amberley Rd 72, London")
-User.create(email: "alex@gmail.com", password: "123456", first_name: "Alex", last_name: "Ab", address: "Amberley Rd 73, London")
+User.create(email: "omair@gmail.com", password: "123456", first_name: "Omair", last_name: "Qu", address: "7 Marylands Rd, London")
+User.create(email: "oznur@gmail.com", password: "123456", first_name: "Oznur", last_name: "Ar", address: "Downfield Cl, London")
+User.create(email: "alex@gmail.com", password: "123456", first_name: "Alex", last_name: "Ab", address: "3 Downfield Cl, London")
 User.create(email: "Bob@gmail.com", password: "123456", first_name: "Bob", last_name: "AR" )
 User.create(email: "John@gmail.com", password: "123456", first_name: "John", last_name: "CW" )
 User.create(email: "Derrik@gmail.com", password: "123456", first_name: "Derrik", last_name: "KL", address: "Sutherland Ave 17, London")
